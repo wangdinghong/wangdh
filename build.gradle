@@ -1,0 +1,26 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+//gradle编译环境
+buildscript {
+    //支持的仓库
+    repositories {
+        jcenter()//类似与maven的远程仓库（只要针对AS提供的一个远程仓库）
+//        maven()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.1.0'//依赖gradle编译环境
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+//    所有project支持的仓库
+    repositories {
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
